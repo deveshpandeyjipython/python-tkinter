@@ -1,0 +1,23 @@
+import customtkinter as ctk
+import pyautogui
+import keyboard
+import os
+
+
+
+def take_screenshot():
+    screenshot = pyautogui.screenshot()
+    screenshot.save('screenshot.png')
+    os.startfile("screenshot.png")
+keyboard.add_hotkey('ctrl+shift+s', take_screenshot)
+
+
+keyboard.wait('esc')
+
+
+# Keep the script running
+
+app=ctk.CTk()
+app.geometry("300x300")
+
+app.mainloop()
